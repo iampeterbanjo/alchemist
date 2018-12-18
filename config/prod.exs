@@ -17,6 +17,12 @@ config :alchemist, AlchemistWeb.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+# Configure your database
+config :alchemist, Alchemist.Repo,
+  username: System.get_env("DATABASE_USER") || "${DATABASE_USER}",
+  password: System.get_env("DATABASE_PASSWORD") || "${DATABASE_PASSWORD}",
+  database: System.get_env("DATABASE") || "${DATABASE}",
+  pool_size: 5
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
