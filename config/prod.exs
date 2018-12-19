@@ -22,6 +22,7 @@ config :alchemist, Alchemist.Repo,
   username: System.get_env("DATABASE_USER") || "${DATABASE_USER}",
   password: System.get_env("DATABASE_PASSWORD") || "${DATABASE_PASSWORD}",
   database: System.get_env("DATABASE") || "${DATABASE}",
+  hostname: System.get_env("DATABASE_HOSTNAME") || "${DATABASE_HOSTNAME}",
   pool_size: 5
 # ## SSL Support
 #
