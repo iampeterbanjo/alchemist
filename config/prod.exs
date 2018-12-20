@@ -23,7 +23,7 @@ config :alchemist, Alchemist.Repo,
   password: System.get_env("DATABASE_PASSWORD") || "${DATABASE_PASSWORD}",
   database: System.get_env("DATABASE") || "${DATABASE}",
   hostname: System.get_env("DATABASE_HOSTNAME") || "${DATABASE_HOSTNAME}",
-  pool_size: System.get_env("POOL_SIZE") || "${POOL_SIZE}"
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "${POOL_SIZE}")
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
